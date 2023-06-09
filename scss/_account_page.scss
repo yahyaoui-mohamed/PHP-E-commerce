@@ -1,0 +1,90 @@
+.account-page {
+  margin: 50px 0;
+  h1 {
+    font-family: $secondFont;
+  }
+  a {
+    width: 31%;
+    margin: 50px 0;
+    margin-right: 25px;
+    border: 1px solid #ccc;
+    padding: 50px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    &:hover span {
+      color: $blueColor;
+    }
+    i {
+      margin-bottom: 15px;
+      color: $blueColor;
+      font-size: 30px;
+    }
+    span {
+      color: $blackColor;
+      font-size: 30px;
+      display: block;
+      font-family: $secondFont;
+      transition: 0.5s;
+    }
+  }
+  .logout-btn {
+    color: $whiteColor;
+    background-color: $blueColor;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 50px;
+    font-family: $secondFont;
+  }
+}
+
+.wishlist-table 
+{
+  margin: 20px auto;
+  border-spacing:0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-family:$mainFont;
+  tr{
+    td{
+      padding:20px;
+      border:1px solid #eee;
+      img{
+      width:50px;    
+      }
+      a.add-to-cart{
+        color:$whiteColor;
+        text-decoration:none;
+        background-color:$blueColor;
+        padding:10px 30px;
+        border-radius:50px;
+      }
+    }
+    
+  }
+}
+
+h1.wish-list-title{
+  margin:20px 0;
+  margin-left:50px;
+  position:relative;
+  &:before{
+    content:"";
+    position: absolute;
+    width:70px;
+    display:block;
+    margin:5px;
+    height:3px;
+    background-color:$blueColor;
+    top:40px;
+    left:0 
+  }
+}
+
+.fa-trash{
+  cursor:pointer;
+  transition:.5s;
+  &:hover{
+    color:$blueColor
+  }
+}

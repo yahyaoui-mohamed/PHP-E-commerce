@@ -1,0 +1,64 @@
+.profile{
+	border:1px solid #ccc;
+	width:700px;
+	margin:50px auto;
+	form{
+		input[type="text"],input[type="email"],input[type="password"]{
+			width:50%;
+			outline:none;
+			border:1px solid #ccc;
+			padding:8px 10px;
+			font-family:$secondFont;
+			transition:.5s;
+			color:#ccc;
+			border-radius:5px;
+			font-size:16px;
+			&:focus{
+				border:1px solid $blueColor;
+				color:$blackColor;
+			}
+
+		}
+		label{
+			margin-right:20px;
+			width:30%;
+			padding:10px 0;
+			font-family:$secondFont;
+			cursor:pointer;
+		}
+		#profile-pass,#profile-new-pass{
+			background-color:$blueColor;
+		    position: absolute;
+		    right: 20px;
+		    top: 5px;
+		    padding: 5px 20px;
+		    color: $whiteColor;
+		    font-family:$secondFont;
+		    border-radius:5px;
+		    cursor:pointer;
+		}
+		.form-group{
+			position:relative;
+			margin:auto;
+			margin-bottom:30px;
+			width:100%;
+			display:flex;
+			input[type="submit"]{
+				width:auto;
+				margin:auto;
+				color:$whiteColor;
+				background-color:$blueColor;
+				padding:10px 40px;
+				font-family:$secondFont;
+				font-size:25px;
+				border:none;
+				border-radius:50px;
+				cursor:pointer;
+				outline:none;
+			}
+		}
+	}
+	h1{
+		margin-bottom:40px;
+	}
+}

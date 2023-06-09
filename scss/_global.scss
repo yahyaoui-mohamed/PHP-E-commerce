@@ -1,0 +1,112 @@
+@import "https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap";
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	font-family: Open Sans;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: auto;
+}
+
+@media (min-width:1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+h1 {
+	font-family: $secondFont;
+}
+
+
+.loader {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: $whiteColor;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10202152;
+
+	.loader-inner {
+		width: 60px;
+		height: 60px;
+		box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+		line-height: 60px;
+		text-align: center;
+		font-family: $secondFont;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 25px;
+		border-radius: 50%;
+		border: 3px solid $blueColor;
+		animation: spinn 1s linear infinite;
+
+		span:first-child {
+			color: $mainColor;
+		}
+
+		span:last-child {
+			color: $blueColor;
+		}
+	}
+}
+
+@keyframes spinn {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.alert {
+	margin: 30px 0;
+	color: #155724;
+	font-family: $secondFont;
+}
+
+.alert-success {
+	background-color: #d4edda;
+	padding: 10px 0;
+	font-weight: 400;
+	font-size: 16px;
+	width: 80%;
+	margin: 20px auto;
+	border-radius: 2px;
+}
+
+.form-group {
+	margin-bottom: 40px;
+}
