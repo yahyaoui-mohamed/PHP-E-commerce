@@ -7,7 +7,6 @@ session_start();
 		$req = $connect->prepare("SELECT * FROM wishlist WHERE user_id = ?");
 		$req->execute(array($_SESSION["user_id"]));
 		$wishList = $req->rowCount();
-
 		$req1 = $connect->prepare("SELECT * FROM orders WHERE user_id = ?");
 		$req1->execute(array($_SESSION["user_id"]));
 		$order = $req1->rowCount();

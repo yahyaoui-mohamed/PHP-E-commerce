@@ -40,8 +40,10 @@ $(function () {
 
 	// Add To Wishlist
 
-	$(".product-card .product-icons .fi-rr-heart").click(function () {
+	$(".product-card .product-icons").children().children().click(function () {
 		let id = $(this).parent().siblings("input").val();
+		if ($(this).hasClass('fi-rr-heart')){
+		
 		$.ajax(
 			{
 				method: "POST",
@@ -50,13 +52,37 @@ $(function () {
 				{
 					product_id: id,
 				},
+				beforeSend : () => {
+					$(this).removeClass("fi-rr-heart").addClass("fi-rr-heart-crack")
+					$(this).siblings("span").html("Remove from wishlist");
+				},
 				success: function (data) {
 					$(".wishlist-count").html(data);
 				}
 			}
 		);
-	});
-
+		}
+		else if ($(this).hasClass('fi-rr-heart-crack')){
+			$.ajax(
+				{
+					method : "POST",
+					url : "backend/deleteWishlist.php",
+					data :
+					{
+						product_id :id,
+					},
+					beforeSend : () =>{
+						$(this).removeClass('fi-rr-heart-crack').addClass("fi-rr-heart");
+						$(this).siblings("span").html("Add to wishlist");
+					},
+					success: function(data){
+						$(".wishlist-count").html(data);
+					}
+					}
+					);
+				}
+		}
+	);
 
 
 
@@ -103,6 +129,7 @@ $(function () {
 			method: "POST",
 			url: "backend/showlist.php",
 			success: function (data) {
+				console.log(data);
 				$(".wishlist-count").html(data || 0);
 			}
 

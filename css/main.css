@@ -881,7 +881,7 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   background-color: #5677fc;
   padding: 5px 13px;
   font-family: "Oswald", sans-serif;
-  width: 120px;
+  min-width: 120px;
   height: 34px;
   line-height: 25px;
   border-radius: 10px;

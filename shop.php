@@ -11,8 +11,13 @@
 			$req->execute(array($_SESSION["user_id"]));
 			echo $req->rowCount();
 	} else {
-?>
+		if (isset($_SESSION['user_id'])){
+			$req = $connect->prepare("SELECT p.product_id,p.product_name,p.product_price,p.product_src,p.product_sale,w.wishlist_id from products p LEFT JOIN wishlist w ON (w.product_id = p.product_id AND w.user_id = ?);");
+			$req->execute(array($_SESSION["user_id"]));
 
+		}
+?>
+	
 	<div class="shop-content">
 
 		<div class="container">
@@ -105,7 +110,18 @@
 								<div class="product-card">
 									<div class="product-icons">
 										<div class="icon">
-											<i class="fi fi-rr-heart"></i>
+											<?php 
+											$class = "";
+											if(isset($row["wishlist_id"])){
+											if  ($row["wishlist_id"]!= NULL)
+												$class = "fi fi-rr-heart-crack";
+											else
+												$class = "fi fi-rr-heart";
+											}
+											else
+												$class = "fi fi-rr-heart";
+											?>
+											<i class="<?php echo $class ?>"></i>
 											<span>Add to wishlist</span>
 										</div>
 
