@@ -197,7 +197,7 @@
 					    background-color:$blueColor;
 					    padding: 5px 13px;
 					    font-family: $mainFont;
-					    width: 120px;
+					    min-width: 120px !important;
 					    height: 34px;
 					    line-height: 25px;
 					    border-radius:10px;
