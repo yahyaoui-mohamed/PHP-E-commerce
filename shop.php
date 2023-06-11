@@ -45,7 +45,7 @@
 						</div>
 
 						<div class="filter-item">
-							<h4>Pirce <i class="fi fi-rr-minus"></i></h4>
+							<h4>Price <i class="fi fi-rr-minus"></i></h4>
 							<ul>
 								<li>$0 - $100</li>
 								<li>$100 - $200</li>
