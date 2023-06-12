@@ -1170,5 +1170,37 @@ h1.wish-list-title:before {
 .profile h1 {
   margin-bottom: 40px;
 }
+.pagination{
+  display:flex;
+  gap : 4px;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+.page{
+  padding: 10px;
+  border : 1px solid #5677fc;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  cursor:pointer;
+  display:block;
+  border-radius: 5px;
+  text-decoration:none;
+  color:#5677fc;
+  background-color: white;
+}
+.page:hover{
+  transition: 0.2s;
+  background : #5677fc;
+  color : white !important;
+
+}
+.page-selected{
+  background : #5677fc;
+  color:white;
+}
+
 
 /*# sourceMappingURL=main.css.map */

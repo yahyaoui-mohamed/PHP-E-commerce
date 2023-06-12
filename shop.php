@@ -4,6 +4,14 @@
 	$req = $connect->prepare("SELECT * from products");
 	$req->execute();
 	$count = $req->rowCount();
+	if (!isset($_GET["page_id"])){
+		$req = $connect->prepare("SELECT * FROM products LIMIT 5");
+	}
+	else
+	{
+		$req = $connect->prepare("SELECT * FROM products LIMIT 5 OFFSET ". $_GET["page_id"]*5 ." ;");
+	}
+	$req->execute();
 	if (isset($_GET["page"])) {
 		session_start();
 		if ($_GET["page"] === "orders")
@@ -12,9 +20,15 @@
 			echo $req->rowCount();
 	} else {
 		if (isset($_SESSION['user_id'])){
-			$req = $connect->prepare("SELECT p.product_id,p.product_name,p.product_price,p.product_src,p.product_sale,w.wishlist_id from products p LEFT JOIN wishlist w ON (w.product_id = p.product_id AND w.user_id = ?);");
-			$req->execute(array($_SESSION["user_id"]));
-
+			if (!isset($_GET["page_id"])){
+				$req = $connect->prepare("SELECT p.product_id,p.product_name,p.product_price,p.product_src,p.product_sale,w.wishlist_id from products p LEFT JOIN wishlist w ON (w.product_id = p.product_id AND w.user_id = ?) LIMIT 5;");
+				$req->execute(array($_SESSION["user_id"]));
+			}
+			else
+			{
+				$req = $connect->prepare("SELECT p.product_id,p.product_name,p.product_price,p.product_src,p.product_sale,w.wishlist_id from products p LEFT JOIN wishlist w ON (w.product_id = p.product_id AND w.user_id = ?) LIMIT 5 OFFSET ". $_GET["page_id"]*5 . ";");
+				$req->execute(array($_SESSION["user_id"]));
+			}
 		}
 ?>
 	
@@ -160,9 +174,24 @@
 
 						</div>
 					</div>
-				</div>
-
+					<div class="pagination">
+					<?php 
+					for ($i = 1;$i< ceil($count/5) ; $i ++){
+		?>	
+			<?php if (!isset($_GET["page_id"]) && $i == 1) 
+			{ $class= "page-selected page";}
+			else if (isset($_GET["page_id"]) && $i==$_GET["page_id"])
+			{$class = "page-selected page";}
+			else
+			{$class = "page";}
+			?>
+						<a class="<?php echo $class ?>" href=<?php echo "/php-e-commerce/shop?page_id=".$i ?>><?php echo $i ?></a>
+					<?php } ?>
+					</div>
+					</div>
+				
 			</div>
+			
 
 		</div>
 
