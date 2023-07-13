@@ -15,7 +15,10 @@ $(function () {
 
 
 
-
+	$(".page").click(function(){
+		$(this).siblings().removeClass('page-selected');
+		$(this).addClass().addClass('page-selected');
+		})
 
 	$(this).scroll(function () {
 
