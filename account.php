@@ -132,13 +132,13 @@ if (isset($_SESSION["user_id"])) {
 
 
 		<?php
-		} else if ($_GET["page"] === "cart") {
+		} else if ($_GET["page"] === "orders") {
 			$req = $connect->prepare("SELECT * FROM orders WHERE user_id = ?");
 			$req->execute(array($_SESSION["user_id"]));
 			if ($req->rowCount() > 0) {
 				while ($t = $req->fetch()) {
 					$req1 = $connect->prepare("SELECT * FROM products WHERE product_id = ?");
-					$req1->execute(array($t[0]));
+					$req1->execute(array($t[1]));
 					while ($t1 = $req1->fetch()) {
 						echo $t1[0] . " " . $t1[1];
 					}
@@ -169,10 +169,10 @@ if (isset($_SESSION["user_id"])) {
 						</div>
 					</a>
 
-					<a href="?page=cart">
+					<a href="?page=orders">
 						<div class="account-item">
 							<i class="fas fa-shopping-cart"></i>
-							<span>Cart</span>
+							<span>Orders</span>
 						</div>
 					</a>
 

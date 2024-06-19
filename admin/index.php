@@ -40,7 +40,7 @@ else{
 <ul>
   <!-- editproduct -->
     <li <?php echo (!isset($_GET["page"]) ? "class='active'" : "") ?> ><a href="./"><i class="fi fi-rr-home"></i> Dashboard</a></li>
-    <li <?php echo (isset($_GET["page"]) &&  $_GET["page"] === "orders" ? "class='active'" : "") ?> ><a href="?page=orders"><i class="fi fi-rr-shopping-cart"></i>Orders</a></li>
+    <li <?php echo (isset($_GET["page"]) &&  $_GET["page"] === "cart" ? "class='active'" : "") ?> ><a href="?page=cart"><i class="fi fi-rr-shopping-cart"></i>Orders</a></li>
     <li <?php echo (isset($_GET["page"]) &&  $_GET["page"]  === "customers" ? "class='active'" : "") ?> ><a href="?page=customers"><i class="fi fi-rr-users"></i>Customers</a></li>
     <li <?php echo (isset($_GET["page"]) &&  ($_GET["page"]  === "products" || $_GET["page"]  === "productadd" || $_GET["page"]  === "editproduct") ? "class='active'" : "") ?> ><a href="?page=products"><i class="fi fi-rr-box-open"></i>Products</a></li>
     <li <?php echo (isset($_GET["page"]) &&  $_GET["page"]  === "messages" ? "class='active'" : "") ?> ><a href="?page=messages"><i class="fi fi-rr-envelope"></i>Messages</a></li>
@@ -219,7 +219,7 @@ else{
     <?php
       }
       if($_GET["page"] === "orders"){
-        $query = $connect->prepare("SELECT * FROM orders ");
+        $query = $connect->prepare("SELECT * FROM cart ");
         $query->execute();
         ?>
 

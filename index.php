@@ -2,7 +2,6 @@
 include "includes/navbar.php";
 ?>
 	<div class="landing-page">
-		
 		<div class="container">
 			
 			<div class="row">
@@ -37,20 +36,14 @@ include "includes/navbar.php";
 				
 				<div class="cat-img">
 					<img src="img/cat1.jpg" alt="" draggable="false">
-					<span>50% OFF</span>
-					<a href="./shop">Purchase Now</a>
 				</div>
 				
 				<div class="cat-img">
 					<img src="img/cat2.jpg" alt="" draggable="false">
-					<span>50% OFF</span>
-					<a href="./shop">Purchase Now</a>
 				</div>
 				
 				<div class="cat-img">
 					<img src="img/cat3.jpg" alt="" draggable="false">
-					<span>50% OFF</span>
-					<a href="./shop">Purchase Now</a>
 				</div>
 
 			</div>

@@ -1,88 +1,102 @@
 .account-login {
 	padding: 50px 0;
-	border:1px solid #ccc;
-	width:500px;
-	margin:50px auto;
-	h1{
-		margin-bottom:50px;
-		color:#5e5e5e;
-		font-family:arial;
-		span{
-			cursor:pointer;
-			transition:.5s;
-			&.active{
-			color:$blueColor;
+	border: 1px solid #ccc;
+	width: 500px;
+	margin: 50px auto;
+
+	h1 {
+		margin-bottom: 50px;
+		color: #5e5e5e;
+		font-family: $mainFont;
+
+		span {
+			cursor: pointer;
+			transition: .5s;
+
+			&.active {
+				color: $blueColor;
 			}
 		}
 
 	}
-	form
-	{
+
+	form {
 		position: relative;
-		&.signup{
-			display:none;
+
+		&.signup {
+			display: none;
 		}
-		input[type="text"],input[type="email"],input[type="password"]{
-			display:block;
-			margin:auto;
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			display: block;
+			margin: auto;
 			outline: none;
-		    font-family:$secondFont;
-		    border: 1px solid #ccc;
-		    font-size: 16px;
-		    transition: .5s;
-		    padding:12px 40px;
-		    padding-left:10px;
-		    width:70%;
-		    transition:.5s;
-		    &:focus{
-		    	border:1px solid $blueColor;
-		    }
-		}
-		input[type="submit"]{
-			background-color:$blueColor;
-			color:$whiteColor;
-			border-radius:50px;
-			font-size:20px;
-			border:none;
-			font-family:$secondFont;
-			padding:10px 40px;
-			font-weight:600;
-			cursor:pointer;
-			outline:none;
-			display:block;
-			margin:auto;
-			margin-bottom:20px;
-			transition:.5s;
-		    &:focus{
-		    	border:1px solid $blueColor;
-		    }
-		}
-		a{
-			font-family:$secondFont;
-		}
-	
-	}
-	.login{
-		.form-group{
-			position: relative;
-			margin:auto;
-			margin-bottom:40px;
-			max-width:60%;
-			input{
-				width:100%;
+			font-family: $mainFont;
+			border: 1px solid #ccc;
+			font-size: 16px;
+			transition: .5s;
+			padding: 12px 40px;
+			padding-left: 10px;
+			width: 70%;
+			transition: .5s;
+
+			&:focus {
+				border: 1px solid $blueColor;
 			}
-			#toggle-pass-login{
-				position:absolute;
-				right:5px;
-				top:8px;
+		}
+
+		input[type="submit"] {
+			background-color: $blueColor;
+			color: $whiteColor;
+			border-radius: 50px;
+			font-size: 20px;
+			border: none;
+			font-family: $mainFont;
+			padding: 10px 40px;
+			font-weight: 600;
+			cursor: pointer;
+			outline: none;
+			display: block;
+			margin: auto;
+			margin-bottom: 20px;
+			transition: .5s;
+
+			&:focus {
+				border: 1px solid $blueColor;
+			}
+		}
+
+		a {
+			font-family: $mainFont;
+		}
+
+	}
+
+	.login {
+		.form-group {
+			position: relative;
+			margin: auto;
+			margin-bottom: 40px;
+			max-width: 60%;
+
+			input {
+				width: 100%;
+			}
+
+			#toggle-pass-login {
+				position: absolute;
+				right: 5px;
+				top: 8px;
 				display: inline-block;
-			    background-color:$blueColor;
-			    color:$whiteColor;
-			    cursor:pointer;
-			    font-family:$secondFont;
-			    padding:5px;
-			    border-radius:8px;
-				}
+				background-color: $blueColor;
+				color: $whiteColor;
+				cursor: pointer;
+				font-family: $mainFont;
+				padding: 5px;
+				border-radius: 8px;
+			}
 		}
 	}
 }

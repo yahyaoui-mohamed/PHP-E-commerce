@@ -42,46 +42,42 @@ $(function () {
 
 	$(".product-card .product-icons").children().children().click(function () {
 		let id = $(this).parent().siblings("input").val();
-		if ($(this).hasClass('fi-rr-heart')){
-		
-		$.ajax(
-			{
-				method: "POST",
-				url: "backend/wishlist.php",
-				data:
-				{
-					product_id: id,
-				},
-				beforeSend : () => {
-					$(this).removeClass("fi-rr-heart").addClass("fi-rr-heart-crack")
-					$(this).siblings("span").html("Remove from wishlist");
-				},
-				success: function (data) {
-					$(".wishlist-count").html(data);
-				}
-			}
-		);
-		}
-		else if ($(this).hasClass('fi-rr-heart-crack')){
+		if ($(this).hasClass('fi-rr-heart')) {
+
 			$.ajax(
 				{
-					method : "POST",
-					url : "backend/deleteWishlist.php",
-					data :
+					method: "POST",
+					url: "backend/wishlist.php",
+					data:
 					{
-						product_id :id,
+						product_id: id,
 					},
-					beforeSend : () =>{
+					success: function (data) {
+						$(".wishlist-count").html(data);
+					}
+				}
+			);
+		}
+		else if ($(this).hasClass('fi-rr-heart-crack')) {
+			$.ajax(
+				{
+					method: "POST",
+					url: "backend/deleteWishlist.php",
+					data:
+					{
+						product_id: id,
+					},
+					beforeSend: () => {
 						$(this).removeClass('fi-rr-heart-crack').addClass("fi-rr-heart");
 						$(this).siblings("span").html("Add to wishlist");
 					},
-					success: function(data){
+					success: function (data) {
 						$(".wishlist-count").html(data);
 					}
-					}
-					);
 				}
+			);
 		}
+	}
 	);
 
 
@@ -117,7 +113,6 @@ $(function () {
 			method: "POST",
 			url: "backend/showcart.php",
 			success: function (data) {
-				console.log(data);
 				$(".orders-count").html(data || 0);
 			}
 
@@ -129,7 +124,6 @@ $(function () {
 			method: "POST",
 			url: "backend/showlist.php",
 			success: function (data) {
-				console.log(data);
 				$(".wishlist-count").html(data || 0);
 			}
 
@@ -160,4 +154,24 @@ $(function () {
 		$(this).parent().parent().remove();
 	});
 
+});
+
+// Filter Items
+
+
+$(".filter .filter-item ul li").on("click", function () {
+	let item = $(this).text(), type = $(this).parent().siblings().text();
+	$.ajax(
+		{
+			method: "POST",
+			url: "backend/filter.php",
+			data: {
+				item,
+				type
+			},
+			success: function (data) {
+				console.log(data);
+			}
+		}
+	);
 });

@@ -806,7 +806,8 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   margin-bottom: 50px;
 }
 .shop-content .content-wrap .content .products .product-card .overlay {
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   transition: 0.3s;
   position: fixed;
   width: 100%;
@@ -1200,6 +1201,4 @@ h1.wish-list-title:before {
 }
 .profile h1 {
   margin-bottom: 40px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

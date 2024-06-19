@@ -19,6 +19,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Online Store</title>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<link rel="stylesheet" href="./includes/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -52,7 +53,7 @@ session_start();
 						My Wishlist
 						<span class="wishlist-count"><?php echo $wishList; ?></span>
 					</a>
-					<a href="?page=orders">
+					<a href="account?page=orders">
 						My Orders
 						<span class="orders-count"><?php echo $order; ?></span>
 					</a>
@@ -128,7 +129,7 @@ session_start();
 				</li>
 
 				<li class="nav-item">
-					<a href="#" class="nav-link">About</a>
+					<a href="about" class="nav-link">About</a>
 				</li>
 
 			</ul>

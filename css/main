@@ -5,15 +5,33 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: Open Sans;
+}
+
+body {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.text-center {
+  text-align: center !important;
 }
 
 h1 {
@@ -236,7 +254,7 @@ nav .navbar .nav-item .nav-link {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
   padding: 15px 0;
   display: block;
@@ -530,7 +548,6 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
 .footer {
   background-color: #eeeeee;
   padding: 70px 0;
-  position: relative;
 }
 .footer .footer-items {
   margin-right: 10px;
@@ -693,11 +710,14 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
 .shop-content .bread-crumb a.active {
   color: #5677fc;
 }
+.shop-content .content-wrap {
+  overflow: hidden;
+}
 .shop-content .content-wrap .side-bar {
+  width: 25%;
+  float: left;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   padding: 20px 0;
-  margin-bottom: 30px;
-  border-radius: 5px;
 }
 .shop-content .content-wrap .side-bar .filter .filter-item {
   margin-bottom: 20px;
@@ -742,6 +762,11 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   font-size: 10px;
   margin-left: auto;
   transition: 0.5s;
+}
+.shop-content .content-wrap .content {
+  width: 70%;
+  margin-left: 40px;
+  float: left;
 }
 .shop-content .content-wrap .content .content-title {
   padding: 10px;
@@ -805,68 +830,9 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   margin-right: 1.3333%;
   margin-bottom: 50px;
 }
-.shop-content .content-wrap .content .products .product-card .overlay {
-  backdrop-filter: blur(6px);
-  transition: 0.3s;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  top: 0;
-  left: 0;
-  z-index: 550005;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-}
-.shop-content .content-wrap .content .products .product-card .overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view {
-  position: relative;
-  text-align: left;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view .price {
-  font-weight: bold;
-  font-size: 35px;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view .product-title {
-  font-size: 30px;
-  margin: 0;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view .desc {
-  color: rgba(132, 132, 132, 0.9019607843);
-  margin: 0;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view .close {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  background-color: #fff;
-  border: 3px solid #000;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-weight: 700;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 30px;
-  text-align: center;
-  font-family: Open Sans;
-}
-.shop-content .content-wrap .content .products .product-card .overlay .quick-view img {
-  width: 400px;
-  margin-right: 100px;
-}
 .shop-content .content-wrap .content .products .product-card .product-icons {
   position: absolute;
-  right: 15px;
+  right: 0;
 }
 .shop-content .content-wrap .content .products .product-card .product-icons .icon {
   position: relative;
@@ -898,20 +864,23 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   background-color: #5677fc;
   color: #fff;
 }
+.shop-content .content-wrap .content .products .product-card .product-icons .icon i.fa-check {
+  pointer-events: none;
+}
 .shop-content .content-wrap .content .products .product-card .product-icons .icon i:hover + span {
   opacity: 1;
   visibility: visible;
-  left: -140px;
+  left: -148px;
 }
 .shop-content .content-wrap .content .products .product-card .product-icons .icon span {
   position: absolute;
   top: 12px;
-  left: -158px;
+  left: -128px;
   color: #fff;
-  font-size: 10px;
+  font-size: 13px;
   background-color: #5677fc;
   padding: 5px 13px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oswald", sans-serif;
   min-width: 120px !important;
   height: 34px;
   line-height: 25px;
@@ -933,13 +902,17 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
 }
 .shop-content .content-wrap .content .products .product-card .sale {
   position: absolute;
-  top: 14px;
-  left: -4px;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
   background-color: #5677fc;
   color: #fff;
-  transform: rotate(-45deg);
-  padding: 0 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  border-radius: 50%;
 }
 .shop-content .content-wrap .content .products .product-caption p {
   font-family: "Nunito", sans-serif;
@@ -974,7 +947,7 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
 .account-login h1 {
   margin-bottom: 50px;
   color: #5e5e5e;
-  font-family: "Nunito", sans-serif;
+  font-family: arial;
 }
 .account-login h1 span {
   cursor: pointer;
@@ -989,9 +962,7 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
 .account-login form.signup {
   display: none;
 }
-.account-login form input[type=text],
-.account-login form input[type=email],
-.account-login form input[type=password] {
+.account-login form input[type=text], .account-login form input[type=email], .account-login form input[type=password] {
   display: block;
   margin: auto;
   outline: none;
@@ -1004,9 +975,7 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   width: 70%;
   transition: 0.5s;
 }
-.account-login form input[type=text]:focus,
-.account-login form input[type=email]:focus,
-.account-login form input[type=password]:focus {
+.account-login form input[type=text]:focus, .account-login form input[type=email]:focus, .account-login form input[type=password]:focus {
   border: 1px solid #5677fc;
 }
 .account-login form input[type=submit] {
@@ -1098,7 +1067,7 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   width: 100%;
   padding: 20px;
   text-align: center;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .wishlist-table tr td {
   padding: 20px;
@@ -1202,4 +1171,4 @@ h1.wish-list-title:before {
   margin-bottom: 40px;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.map */

@@ -15,10 +15,10 @@ $(function () {
 
 
 
-	$(".page").click(function(){
+	$(".page").click(function () {
 		$(this).siblings().removeClass('page-selected');
 		$(this).addClass().addClass('page-selected');
-		})
+	})
 
 	$(this).scroll(function () {
 
@@ -162,13 +162,45 @@ $(function () {
 		}
 	});
 
-
-	$(".product-card .product-icons .fa-heart").click(function () {
-		$(this).addClass("active");
+	$(".fi-rr-heart").on("click", function () {
+		if ($(this).hasClass("active")) {
+			$(this).next().html("Add to wishlist");
+		}
+		else {
+			$(this).next().html("Remove from wishlist");
+		}
+		$(this).toggleClass("active");
 	});
 
 
+	$(".fi-rr-shopping-cart").on("click", function () {
+		if ($(this).hasClass("active")) {
+			$(this).next().html("Add to cart");
+		}
+		else {
+			$(this).next().html("Remove from cart");
+		}
+		$(this).toggleClass("active");
+	});
 
+	$(".fi-rr-eye").on("click", function () {
+		$(this).parent().parent().prev().addClass("active");
+	});
+
+	$(".close").on("click", function () {
+		$(this).parent().parent().removeClass("active");
+	});
+
+	$(".overlay").on("click", function (e) {
+		if (e.target.classList.contains("overlay")) {
+			$(this).removeClass("active");
+		}
+	});
+	$(this).on("keydown", function (e) {
+		if (e.key === "Escape" && $(".overlay").hasClass("active")) {
+			$(".overlay").removeClass("active");
+		}
+	});
 
 	// End
 });
