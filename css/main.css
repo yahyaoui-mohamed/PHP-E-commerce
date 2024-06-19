@@ -110,47 +110,42 @@ h1 {
 .upper-nav {
   display: flex;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #5677fc;
+  color: #fff;
 }
 .upper-nav .contact {
-  width: 50%;
   text-align: left;
 }
 .upper-nav .contact .contact-item {
   display: inline-block;
-  padding: 10px 15px;
-  border-right: 1px solid #e5e5e5;
-}
-.upper-nav .contact .contact-item:first-child {
-  border-left: 1px solid #e5e5e5;
+  padding: 10px 0;
+  color: #fff;
 }
 .upper-nav .contact .contact-item span {
   margin-left: 5px;
-  color: #555555;
   font-family: "Nunito", sans-serif, sans-serif;
   font-size: 14px;
 }
 .upper-nav .contact .contact-item i {
   font-size: 14px;
-  color: #555555;
+}
+.upper-nav .contact .contact-item:first-child {
+  margin-right: 30px;
 }
 .upper-nav .account {
   text-align: right;
-  width: 50%;
 }
 .upper-nav .account a {
   display: inline-block;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 0;
   font-family: "Nunito", sans-serif, sans-serif;
   color: #555555;
   font-weight: 400;
   font-size: 14px;
-  border-right: 1px solid #e5e5e5;
   transition: 0.5s;
   position: relative;
-}
-.upper-nav .account a:hover {
-  color: #5677fc;
+  color: #fff;
 }
 .upper-nav .account a span {
   position: absolute;
@@ -166,16 +161,36 @@ h1 {
   font-size: 11px;
   border-radius: 50%;
 }
-.upper-nav .account a:first-child {
-  border-left: 1px solid #e5e5e5;
-}
 
 .search-bar {
   padding: 20px 0;
   overflow: hidden;
 }
+.search-bar .cart a {
+  text-decoration: none;
+  color: #2d3436;
+  font-size: 20px;
+  position: relative;
+  transition: 0.4s;
+}
+.search-bar .cart a:hover {
+  color: #5677fc;
+}
+.search-bar .cart a:first-child {
+  margin-right: 40px;
+}
+.search-bar .cart a span {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: 15px;
+}
 .search-bar .navbar-brand {
-  float: left;
   text-align: center;
 }
 .search-bar .navbar-brand a {
@@ -185,19 +200,16 @@ h1 {
   font-size: 20px;
 }
 .search-bar .home-search {
-  float: left;
-  width: 70%;
   position: relative;
-  margin-left: 50px;
   text-align: center;
 }
 .search-bar .home-search input[type=search] {
-  width: 80%;
   border: 1px solid #ccc;
   background: none;
   font-size: 16px;
   outline: none;
   padding: 12px 20px;
+  width: 100%;
 }
 .search-bar .home-search input[type=submit] {
   background: #2d3436;
@@ -207,12 +219,15 @@ h1 {
   top: 0;
   right: 0;
   cursor: pointer;
-  padding: 11px 30px;
+  padding: 13px 30px;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   transition: 0.5s;
   text-transform: uppercase;
   font-weight: bold;
+  position: absolute;
+  right: 12px;
+  top: 0;
 }
 .search-bar .home-search input[type=submit]:hover {
   background-color: #5677fc;
@@ -571,6 +586,32 @@ nav .navbar .nav-item.dropdown .drop-down ul li a:hover {
   font-family: "Nunito", sans-serif;
 }
 
+@media (min-width: 768px) {
+  .upper-nav .contact {
+    text-align: center;
+  }
+  .upper-nav .account {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .upper-nav .contact {
+    text-align: left;
+  }
+  .upper-nav .account {
+    text-align: right;
+  }
+}
+@media (min-width: 768px) {
+  .home-search {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .home-search {
+    display: block;
+  }
+}
 .contact-us {
   margin: 80px 0;
   font-family: "Nunito", sans-serif;

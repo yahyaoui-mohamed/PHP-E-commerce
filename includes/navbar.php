@@ -35,9 +35,9 @@ session_start();
 	</div>
 
 	<div class="upper-nav">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="contact">
+				<div class="contact col-lg-6 col-md-12">
 						<div class="contact-item">
 							<i class="fi fi-rr-envelope"></i><span>exmeple@email.com</span>
 						</div>
@@ -47,35 +47,41 @@ session_start();
 						</div>
 				</div>
 
-				<div class="account">
-					<a href="account">My Account</a>
-					<a href="account?page=wishlist">
-						My Wishlist
-						<span class="wishlist-count"><?php echo $wishList; ?></span>
-					</a>
-					<a href="account?page=orders">
-						My Orders
-						<span class="orders-count"><?php echo $order; ?></span>
-					</a>
+				<div class="account col-lg-6 col-md-12">
+					<a href="account"><i class="fi fi-rr-user"></i> Login / Register</a>
 				</div>
+
 			</div>
 		</div>
 	</div>
 
 	<div class="search-bar">
-		<div class="container">
-			<div class="navbar-brand">
-				<a href="./">
-					<img src="img/logo.png" alt="" draggable="false">
-				</a>
+		<div class="container-fluid">
+			<div class="row align-items-center justify-content-center text-center">
+				<div class="navbar-brand col-lg-3 col-sm-6">
+					<a href="./">
+						<img src="img/logo.png" alt="" draggable="false">
+					</a>
+				</div>	
+
+				<form action="" class="home-search col-lg-6" method="GET">
+					
+						<input type="search" placeholder="Search products...">
+						<input type="submit" value="Search">
+
+				</form>
+				<div class="cart col-lg-3 col-sm-6">
+					<a href="account?page=wishlist">
+						<i class="fi fi-rr-heart"></i>
+						<span class="wishlist-count"><?php echo $wishList; ?></span>
+					</a>
+					<a href="account?page=orders">
+						<i class="fi fi-rr-shopping-cart"></i>
+						<span class="orders-count"><?php echo $order; ?></span>
+					</a>
+				</div>
 			</div>	
-
-			<form action="" class="home-search" method="GET">
-				
-					<input type="search" placeholder="Type to search...">
-					<input type="submit" value="Search">
-
-			</form>
+			
 
 		</div>	
 	</div>

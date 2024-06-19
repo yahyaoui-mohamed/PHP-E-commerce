@@ -196,7 +196,6 @@ else{
               <th>Fistname</th>
               <th>Lastname</th>
               <th>Email</th>
-              <th>Registration Date</th>
             </tr>
       </thead>
             <?php 
@@ -208,7 +207,6 @@ else{
                   <td>$res[1]</td>
                   <td>$res[2]</td>
                   <td>$res[3]</td>
-                  <td>$res[6]</td>
                 </tr>
                 ";
 

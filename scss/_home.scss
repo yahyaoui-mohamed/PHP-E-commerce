@@ -27,23 +27,17 @@
 .upper-nav {
 	display: flex;
 	border-bottom: 1px solid #e5e5e5;
-
+	background-color:$blueColor;
+	color:#fff;
 	.contact {
-		width: 50%;
 		text-align: left;
 
 		.contact-item {
 			display: inline-block;
-			padding: 10px 15px;
-			border-right: 1px solid #e5e5e5;
-
-			&:first-child {
-				border-left: 1px solid #e5e5e5;
-			}
-
+			padding: 10px 0;
+			color:#fff;
 			span {
 				margin-left: 5px;
-				color: #555555;
 				font-family: $mainFont, sans-serif;
 				font-size: 14px;
 
@@ -51,30 +45,27 @@
 
 			i {
 				font-size: 14px;
-				color: #555555;
+			}
+			&:first-child{
+				margin-right:30px;
 			}
 		}
 	}
 
 	.account {
 		text-align: right;
-		width: 50%;
 
 		a {
 			display: inline-block;
 			text-decoration: none;
-			padding: 10px 15px;
+			padding: 10px 0;
 			font-family: $mainFont, sans-serif;
 			color: #555555;
 			font-weight: 400;
 			font-size: 14px;
-			border-right: 1px solid #e5e5e5;
 			transition: .5s;
 			position: relative;
-
-			&:hover {
-				color: $blueColor;
-			}
+			color:#fff;
 
 			span {
 				position: absolute;
@@ -90,10 +81,6 @@
 				font-size: 11px;
 				border-radius: 50%;
 			}
-
-			&:first-child {
-				border-left: 1px solid #e5e5e5;
-			}
 		}
 	}
 }
@@ -101,11 +88,34 @@
 .search-bar {
 	padding: 20px 0;
 	overflow: hidden;
-
+	.cart{
+		a{
+			text-decoration:none;
+			color:$mainColor;
+			font-size:20px;
+			position: relative;
+			transition:.4s;
+			&:hover{
+				color:$blueColor;
+			}
+			&:first-child{
+				margin-right:40px;
+			}
+			span{
+				position: absolute;
+				top:-15px;
+				left:20px;
+				width:20px;
+				height:20px;
+				border-radius:50%;
+				background-color:$blueColor;
+				color:#fff;
+				font-size:15px;
+			}
+		}
+	}
 	.navbar-brand {
-		float: left;
 		text-align: center;
-
 		a {
 			text-decoration: none;
 			font-family: $secondFont;
@@ -115,19 +125,16 @@
 	}
 
 	.home-search {
-		float: left;
-		width: 70%;
 		position: relative;
-		margin-left: 50px;
 		text-align: center;
 
 		input[type="search"] {
-			width: 80%;
 			border: 1px solid #ccc;
 			background: none;
 			font-size: 16px;
 			outline: none;
 			padding: 12px 20px;
+			width:100%;
 		}
 
 		input[type="submit"] {
@@ -138,13 +145,15 @@
 			top: 0;
 			right: 0;
 			cursor: pointer;
-			padding: 11px 30px;
+			padding: 13px 30px;
 			font-size: 16px;
 			font-family: $openSans;
 			transition: .5s;
 			text-transform: uppercase;
 			font-weight: bold;
-			;
+			position: absolute;
+			right: 12px;
+			top:0;
 
 			&:hover {
 				background-color: $blueColor;
@@ -156,7 +165,7 @@
 nav {
 	margin-bottom: 20px;
 	background-color: $blueColor;
-
+	
 	.navbar {
 		list-style: none;
 		margin: 0;
@@ -573,4 +582,35 @@ nav {
 			font-family: $secondFont;
 		}
 	}
+}
+
+@media (min-width: 768px) {
+    .upper-nav .contact {
+		text-align:center;
+	}
+	.upper-nav .account {
+		text-align:center;
+	}
+
+}
+
+@media (min-width: 992px) {
+	.upper-nav .contact {
+		text-align:left;
+	}
+	.upper-nav .account {
+		text-align:right;
+	}
+}
+
+@media (min-width: 768px) {
+    .home-search{
+        display:none;
+    }
+}
+
+@media (min-width: 992px) {
+	.home-search{
+        display:block;
+    }
 }
