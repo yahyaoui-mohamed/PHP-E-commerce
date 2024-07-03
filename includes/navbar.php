@@ -7,7 +7,7 @@ session_start();
 		$req = $connect->prepare("SELECT * FROM wishlist WHERE user_id = ?");
 		$req->execute(array($_SESSION["user_id"]));
 		$wishList = $req->rowCount();
-		$req1 = $connect->prepare("SELECT * FROM orders WHERE user_id = ?");
+		$req1 = $connect->prepare("SELECT * FROM cart WHERE user_id = ?");
 		$req1->execute(array($_SESSION["user_id"]));
 		$order = $req1->rowCount();
 	}
@@ -24,6 +24,7 @@ session_start();
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
 	<a href="#" class="scroll-top">
 		<i class="fi fi-rr-arrow-up"></i>
 	</a>
@@ -48,7 +49,13 @@ session_start();
 				</div>
 
 				<div class="account col-lg-6 col-md-12">
-					<a href="account"><i class="fi fi-rr-user"></i> Login / Register</a>
+					<a href="account"><i class="fi fi-rr-user"></i>
+					<?php
+					if(!isset($_SESSION["user_id"])){
+						echo "Login / Register";
+					}
+					?>
+				</a>
 				</div>
 
 			</div>
@@ -86,58 +93,34 @@ session_start();
 		</div>	
 	</div>
 
-	<nav class="animate__animated">
-		<div class="container">
-			<ul class="navbar">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary animate__animated">
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+    
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav m-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a href="./" class="nav-link">Home</a>
+					<a class="nav-link" href="./">Home</a>
 				</li>
-
-				<li class="nav-item dropdown">
-					<a href="shop" class="nav-link">Shop</a>
-					<div class="drop-down">
-						<ul>
-							<li><a href="#">Accessoires</a></li>
-							<li><a href="#">Casual</a></li>
-							<li><a href="#">Clothing</a></li>
-							<li><a href="#">Women</a></li>
-							<li><a href="#">Men</a></li>
-						</ul>
-					</div>
-				</li>
-
-				<li class="nav-item dropdown">
-					<a href="#" class="nav-link">Men</a>
-					<div class="drop-down">
-						<ul>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-						</ul>
-					</div>
-				</li>
-
-				<li class="nav-item dropdown">
-					<a href="#" class="nav-link">Women</a>
-					<div class="drop-down">
-						<ul>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-							<li><a href="#">Shop1</a></li>
-						</ul>
-					</div>
-				</li>
-
 				<li class="nav-item">
-					<a href="contact" class="nav-link">Contact</a>
+					<a class="nav-link" href="shop">Shop</a>
 				</li>
-
 				<li class="nav-item">
-					<a href="about" class="nav-link">About</a>
+					<a class="nav-link" href="#">Men</a>
 				</li>
-
+				<li class="nav-item">
+					<a class="nav-link" href="#">Women</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
 			</ul>
 		</div>
-	</nav>
+	</div>
+</nav>

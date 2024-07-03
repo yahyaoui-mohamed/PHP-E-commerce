@@ -3,29 +3,23 @@ include "includes/navbar.php";
 ?>
 	<div class="landing-page">
 		<div class="container">
-			
 			<div class="row">
-				
-				<div class="item-primary">
+				<div class="col-lg-8 item-primary">
 					<div class="img">
 						<img src="img/home/home1.jpg" alt="">
 					</div>
 				</div>
 
-				<div class="item-secondary">
+				<div class="col-lg-4 item-secondary">
 					<div class="img">
 						<img src="img/home/home2.jpg" alt="">
 					</div>
-					
 					<div class="img">
 						<img src="img/home/home3.jpg" alt="">	
 					</div>
-					
 				</div>
-			
+	
 			</div>
-
-
 		</div>
 
 	</div>
@@ -34,15 +28,15 @@ include "includes/navbar.php";
 		<div class="container">
 			<div class="row">
 				
-				<div class="cat-img">
+				<div class="col-lg-4 cat-img">
 					<img src="img/cat1.jpg" alt="" draggable="false">
 				</div>
 				
-				<div class="cat-img">
+				<div class="col-lg-4 cat-img">
 					<img src="img/cat2.jpg" alt="" draggable="false">
 				</div>
 				
-				<div class="cat-img">
+				<div class="col-lg-4 cat-img">
 					<img src="img/cat3.jpg" alt="" draggable="false">
 				</div>
 
@@ -55,7 +49,7 @@ include "includes/navbar.php";
 		<div class="container">
 			<div class="row">
 			
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product1.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -66,7 +60,7 @@ include "includes/navbar.php";
 					</div>
 				</div>
 				
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product2.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -74,7 +68,7 @@ include "includes/navbar.php";
 					</div>
 				</div>
 
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product3.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -82,7 +76,7 @@ include "includes/navbar.php";
 					</div>
 				</div>
 				
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product4.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -91,7 +85,7 @@ include "includes/navbar.php";
 					</div>
 				</div>
 
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product5.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -99,7 +93,7 @@ include "includes/navbar.php";
 					</div>
 				</div>
 
-				<div class="product-card">
+				<div class="product-card col-lg-4 col-sm-12">
 					<img src="img/products/product6.png" alt="">
 					<div class="product-caption">
 						<p>Green Dress with details</p>
@@ -111,34 +105,37 @@ include "includes/navbar.php";
 	</div>
 
 	<div class="gallery">
-		<div class="row">
-			<div class="gallery-item">
-				<img src="img/gallery/gallery1.jpg" alt="">
-			</div>
-			
-			<div class="gallery-item">
-				<img src="img/gallery/gallery2.jpg" alt="">
-			</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="gallery-item">
+					<img src="img/gallery/gallery1.jpg" alt="">
+				</div>
+				
+				<div class="gallery-item">
+					<img src="img/gallery/gallery2.jpg" alt="">
+				</div>
 
-			<div class="gallery-item">
-				<img src="img/gallery/gallery3.jpg" alt="">
-			</div>
+				<div class="gallery-item">
+					<img src="img/gallery/gallery3.jpg" alt="">
+				</div>
 
-			<div class="gallery-item">
-				<img src="img/gallery/gallery4.jpg" alt="">
-			</div>
+				<div class="gallery-item">
+					<img src="img/gallery/gallery4.jpg" alt="">
+				</div>
 
-			<div class="gallery-item">
-				<img src="img/gallery/gallery5.jpg" alt="">
+				<div class="gallery-item">
+					<img src="img/gallery/gallery5.jpg" alt="">
+				</div>
 			</div>
 		</div>
+
 	</div>
 
 
 	<div class="shop-method text-center">
 		<div class="container">
 			<div class="row">
-				<div class="shop-item">
+				<div class="shop-item col-lg-4">
 					<div class="shop-method-icon">
 						<i class="fas fa-cube"></i>
 					</div>
@@ -146,7 +143,7 @@ include "includes/navbar.php";
 					<p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
 				</div>
 
-				<div class="shop-item">
+				<div class="shop-item col-lg-4">
 					<div class="shop-method-icon">
 						<i class="fas fa-unlock-alt"></i>
 					</div>
@@ -154,7 +151,7 @@ include "includes/navbar.php";
 					<p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
 				</div>
 				
-				<div class="shop-item">
+				<div class="shop-item col-lg-4">
 					<div class="shop-method-icon">
 						<i class="fas fa-sync-alt"></i>
 					</div>
@@ -168,13 +165,16 @@ include "includes/navbar.php";
 	<div class="newsletter text-center">
 		<div class="container">
 			<div class="row">
-				<div class="newsletter-description">
+				<div class="newsletter-description col-lg-6">
 					<p>Subscribe to our newsletter</p>
 				</div>
-				<form>
-					<input type="email" placeholder="Enter your email" name="email" autocomplete="off" required>
-					<input type="submit" value="Subscribe">
-				</form>
+				<div class="col-lg-6">
+					<form>
+						<input type="email" placeholder="Enter your email" name="email" autocomplete="off" required>
+						<input type="submit" value="Subscribe">
+					</form>
+				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -26,11 +26,11 @@
    else{
 ?>
 <div class="shop-content">
-   <div class="container">
+   <div class="container-fluid">
       <div class="bread-crumb"><a href="./">Home</a> | <a href="shop" class="active">Shop</a></div>
       <div class="content-wrap">
          <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                <div class="side-bar">
                   <div class="filter">
                      <div class="filter-item">
@@ -84,7 +84,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                <div class="content text-center">
                   <div class="content-title">
                      <span class="title">Shop (<?php echo $count; ?>)</span>
@@ -115,13 +115,13 @@
                            		$wished->execute(array($row["product_id"], $_SESSION["user_id"]));
                            		$wished = $wished->rowCount() > 0 ? true : false;
                            
-                           		$ordered = $connect->prepare("SELECT * FROM orders WHERE product_id = ? AND user_id = ?");
+                           		$ordered = $connect->prepare("SELECT * FROM cart WHERE product_id = ? AND user_id = ?");
                            		$ordered->execute(array($row["product_id"], $_SESSION["user_id"]));
                            		$ordered = $ordered->rowCount() > 0 ? true : false;
                            	}
                            	
                            ?>
-                        <div class="product-card">
+                        <div class="product-card col-lg-4 col-sm-12">
 													<div class="overlay">
 														<div class="quick-view">
 															<div class="close">X</div>

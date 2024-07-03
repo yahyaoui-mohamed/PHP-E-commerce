@@ -80,7 +80,7 @@ if (isset($_SESSION["user_id"])) {
 				"
 				<table class='wishlist-table'>
 				<tr>
-					<td></td>
+					<td>#</td>
 					<td>Product</td>
 					<td>Description</td>
 					<td>Price</td>
@@ -102,7 +102,7 @@ if (isset($_SESSION["user_id"])) {
 						<td><?php echo $t1['product_name']; ?></td>
 						<td><?php echo $t1['product_price']; ?></td>
 						<input type="hidden" value=<?php echo $t1['product_id']; ?>>
-						<td><a href=# class="add-to-cart">Add To Cart</a></td>
+						<td><a href="#" class="add-to-cart" id="add-to-cart">Add To Cart</a></td>
 					</tr>
 					
 
@@ -113,8 +113,7 @@ if (isset($_SESSION["user_id"])) {
 				echo "
 				<tr>
 				<td colspan=3>Total:</td>
-				<td>$$floatTotal.00</td>
-				<td><button>Proceed to check out</button></td>
+				<td colspan=2>".$floatTotal.".00</td>
 				</tr>
 				</table>
 				";
@@ -133,16 +132,45 @@ if (isset($_SESSION["user_id"])) {
 
 		<?php
 		} else if ($_GET["page"] === "orders") {
-			$req = $connect->prepare("SELECT * FROM orders WHERE user_id = ?");
+			echo "<h1 class='wish-list-title'>Orders</h1>";
+			echo 
+			"
+			<table class='wishlist-table'>
+			<tr>
+				<td>#</td>
+				<td>Product</td>
+				<td>Description</td>
+				<td>Price</td>
+			</tr>
+			";
+			$req = $connect->prepare("SELECT * FROM cart WHERE user_id = ?");
 			$req->execute(array($_SESSION["user_id"]));
 			if ($req->rowCount() > 0) {
+				$total = 0;
 				while ($t = $req->fetch()) {
 					$req1 = $connect->prepare("SELECT * FROM products WHERE product_id = ?");
 					$req1->execute(array($t[1]));
 					while ($t1 = $req1->fetch()) {
-						echo $t1[0] . " " . $t1[1];
+						?>
+							<tr>
+								<td><?= $t1[0]?></td>
+								<td><img src="<?php echo $t1['product_src']; ?>" alt=></td>
+								<td><?php echo $t1['product_name']; ?></td>
+								<td><?php echo $t1['product_price']; ?></td>
+								<input type="hidden" value=<?php echo $t1['product_id']; ?>>
+							</tr>
+						<?php
+						$total += $t1["product_price"];
 					}
 				}
+				echo "
+				<tr>
+				<td colspan=3>Total:</td>
+				<td>".$total."</td>
+				<td><a class='btn btn-primary' href='checkout'>Proceed to check out</a></td>
+				</tr>
+				</table>
+				";
 			}
 		}
 	} else {

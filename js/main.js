@@ -205,3 +205,22 @@ $(function () {
 	// End
 });
 // End
+
+document.querySelectorAll("#add-to-cart").forEach(item => {
+	item.addEventListener("click",function(e){
+		e.preventDefault();
+		let id = $(this).parent().siblings("input").val();
+		console.log(id)
+		$.ajax(
+			{
+				method: "POST",
+				url: "backend/addtocart.php",
+				data:
+				{
+					id,
+				},
+			}
+		);
+		$(this).parent().parent().remove();
+	});
+})
