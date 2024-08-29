@@ -133,7 +133,11 @@ if (isset($_SESSION["user_id"])) {
 		<?php
 		} else if ($_GET["page"] === "orders") {
 			echo "<h1 class='wish-list-title'>Orders</h1>";
-			echo 
+			$req = $connect->prepare("SELECT * FROM cart WHERE user_id = ?");
+			$req->execute(array($_SESSION["user_id"]));
+			$total = 0;
+			if ($req->rowCount() > 0) {
+				echo 
 			"
 			<table class='wishlist-table'>
 			<tr>
@@ -143,9 +147,6 @@ if (isset($_SESSION["user_id"])) {
 				<td>Price</td>
 			</tr>
 			";
-			$req = $connect->prepare("SELECT * FROM cart WHERE user_id = ?");
-			$req->execute(array($_SESSION["user_id"]));
-			if ($req->rowCount() > 0) {
 				$total = 0;
 				while ($t = $req->fetch()) {
 					$req1 = $connect->prepare("SELECT * FROM products WHERE product_id = ?");
@@ -172,6 +173,10 @@ if (isset($_SESSION["user_id"])) {
 				</table>
 				";
 			}
+			else{
+				echo "There is no Orders";
+			}
+			
 		}
 	} else {
 

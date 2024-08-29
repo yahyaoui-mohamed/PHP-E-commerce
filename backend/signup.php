@@ -15,7 +15,7 @@ if( $_SERVER["REQUEST_METHOD"] === "POST" )
 	$date = date("Y-m-d");
 	if($count == 0)
 	{
-		$stat1 = $connect->prepare("INSERT INTO users VALUES ('','$firstname','$lastname','$email','$password','0', '$date')");
+		$stat1 = $connect->prepare("INSERT INTO users VALUES ('','$firstname','$lastname','$email','$password','0')");
 		$stat1->execute();
 		echo "
 			<form action=' class='signup' method='POST' id='signup-form'>

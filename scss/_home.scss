@@ -166,23 +166,49 @@
 
 nav {
 	margin-bottom: 20px;
-	background-color: $blueColor;
-	
+	background-color: $blueColor!important;
 	.navbar-nav {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		text-align: center;
-
 		.nav-item {
+			&:hover{
+				.dropdown{
+					visibility:visible;
+					opacity:1;
+				}
+			}
 			display: inline-block;
-			padding: 0 50px;
-
+			margin: 0 50px;
+			position: relative;
+			.dropdown{
+				z-index:5;
+				position: absolute;
+				background-color: $blueColor;
+				// display:none;
+				visibility:hidden;
+				opacity:0;
+				transition:.4s;
+				.dropdown-list{
+					margin: 0;
+					padding: 11px 50px 10px 10px;
+					text-align: left;
+					li{
+						margin-top:10px;
+						a{
+							text-decoration:none;
+							color:#fff;
+							font-family:$openSans;
+						}
+					}
+				}
+			}
 			.nav-link {
 				text-decoration: none;
 				color: $whiteColor;
 				font-weight: 600;
-				font-family: $mainFont;
+				font-family:$openSans;
 				font-weight: 300;
 				padding: 15px 0;
 				display: block;
@@ -525,7 +551,14 @@ nav {
 	position: relative;
 
 	.footer-items {
-
+		p{
+			font-family: $roboto;
+		}
+		h2{
+			font-size:18px;
+			font-weight:bold;
+			font-family: $roboto;
+		}
 		ul {
 			margin: 0;
 			padding: 0;
@@ -538,8 +571,8 @@ nav {
 				a {
 					color: #555;
 					text-decoration: none;
-					font-family: $secondFont;
-					font-size: 18px;
+					font-family: $roboto;
+					font-size: 14px;
 					transition: .5s;
 
 					&:hover {
@@ -569,33 +602,9 @@ nav {
 	}
 }
 
-@media (min-width: 768px) {
-    .upper-nav .contact {
-		text-align:center;
-	}
-	.upper-nav .account {
-		text-align:center;
-	}
-
-}
-
-@media (min-width: 992px) {
-	.upper-nav .contact {
-		text-align:left;
-	}
-	.upper-nav .account {
-		text-align:right;
-	}
-}
-
-@media (min-width: 768px) {
-    .home-search{
-        display:none;
-    }
-}
-
-@media (min-width: 992px) {
-	.home-search{
-        display:block;
-    }
+.copyrights{
+	padding:30px 0;
+	background-color: $mainColor;
+	color:#fff;
+	font-family: $mainFont;
 }

@@ -26,14 +26,13 @@
 	// Bread Crumb
 	.content-wrap {
 		.side-bar {
-			box-shadow: 0px 0 25px 0 rgba(0, 0, 0, .1);
+			box-shadow:0px 0 25px 16px rgba(0, 0, 0, 0.1);
 			padding: 20px 0;
 			margin-bottom: 30px;
 			border-radius: 5px;
 
 			.filter {
 				.filter-item {
-					margin-bottom: 20px;
 					padding: 0 25px;
 
 					ul {
@@ -44,7 +43,7 @@
 
 						li {
 							margin-bottom: 15px;
-							font-family: $secondFont;
+							font-family: $openSans;
 							cursor: pointer;
 							transition: .5s;
 							font-weight: 400;

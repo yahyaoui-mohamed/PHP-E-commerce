@@ -38,26 +38,25 @@ session_start();
 	<div class="upper-nav">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="contact col-lg-6 col-md-12">
+				
+				<div class="contact col-lg-6 col-md-12 text-center">
 						<div class="contact-item">
 							<i class="fi fi-rr-envelope"></i><span>exmeple@email.com</span>
 						</div>
-
 						<div class="contact-item">
 							<i class="fi fi-rr-phone-flip"></i><span>+125-54-84-52</span>	
 						</div>
 				</div>
 
-				<div class="account col-lg-6 col-md-12">
+				<div class="account col-lg-6 col-md-12 text-center">
 					<a href="account"><i class="fi fi-rr-user"></i>
-					<?php
-					if(!isset($_SESSION["user_id"])){
-						echo "Login / Register";
-					}
-					?>
-				</a>
+						<?php
+						if(!isset($_SESSION["user_id"])){
+							echo "Login / Register";
+						}
+						?>
+					</a>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -94,7 +93,7 @@ session_start();
 	</div>
 
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary animate__animated">
+<nav class="navbar navbar-expand-lg text-center animate__animated">
 	<div class="container-fluid">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -110,12 +109,39 @@ session_start();
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Men</a>
+					<div class="dropdown">
+						<ul class="dropdown-list">
+							<li><a href="">Shirt</a></li>
+							<li><a href="">Jeans</a></li>
+							<li><a href="">Sneakers</a></li>
+							<li><a href="">T-Shirt</a></li>
+						</ul>
+					</div>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Women</a>
+					<div class="dropdown">
+						<ul class="dropdown-list">
+							<li><a href="">Shirt</a></li>
+							<li><a href="">Jeans</a></li>
+							<li><a href="">Sneakers</a></li>
+							<li><a href="">T-Shirt</a></li>
+						</ul>
+					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="#">Kids</a>
+					<div class="dropdown">
+						<ul class="dropdown-list">
+							<li><a href="">Shirt</a></li>
+							<li><a href="">Jeans</a></li>
+							<li><a href="">Sneakers</a></li>
+							<li><a href="">T-Shirt</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact">Contact</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">About</a>

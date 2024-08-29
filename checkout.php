@@ -11,7 +11,8 @@ $query->execute(array($_SESSION['user_id']));
 <div class="container-fluid">
     <h1 class='wish-list-title'>Checkout</h1>
     <?php 
-        echo 
+        if($query->rowCount() > 0){
+            echo 
         "
         <table class='wishlist-table'>
         <tr>
@@ -43,6 +44,10 @@ $query->execute(array($_SESSION['user_id']));
         </tr>
         </table>
         ";
+        }
+        else{
+            echo "No orders to checkout.";
+        }
     
     ?>
 

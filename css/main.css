@@ -236,7 +236,7 @@ h1 {
 
 nav {
   margin-bottom: 20px;
-  background-color: #5677fc;
+  background-color: #5677fc !important;
 }
 nav .navbar-nav {
   list-style: none;
@@ -246,13 +246,39 @@ nav .navbar-nav {
 }
 nav .navbar-nav .nav-item {
   display: inline-block;
-  padding: 0 50px;
+  margin: 0 50px;
+  position: relative;
+}
+nav .navbar-nav .nav-item:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+nav .navbar-nav .nav-item .dropdown {
+  z-index: 5;
+  position: absolute;
+  background-color: #5677fc;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+}
+nav .navbar-nav .nav-item .dropdown .dropdown-list {
+  margin: 0;
+  padding: 11px 50px 10px 10px;
+  text-align: left;
+}
+nav .navbar-nav .nav-item .dropdown .dropdown-list li {
+  margin-top: 10px;
+}
+nav .navbar-nav .nav-item .dropdown .dropdown-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
 }
 nav .navbar-nav .nav-item .nav-link {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   padding: 15px 0;
   display: block;
@@ -531,6 +557,14 @@ nav .navbar-nav .nav-item.dropdown .drop-down ul li a:hover {
   padding: 70px 0;
   position: relative;
 }
+.footer .footer-items p {
+  font-family: "Roboto";
+}
+.footer .footer-items h2 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto";
+}
 .footer .footer-items ul {
   margin: 0;
   padding: 0;
@@ -543,8 +577,8 @@ nav .navbar-nav .nav-item.dropdown .drop-down ul li a:hover {
 .footer .footer-items ul li a {
   color: #555;
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
-  font-size: 18px;
+  font-family: "Roboto";
+  font-size: 14px;
   transition: 0.5s;
 }
 .footer .footer-items ul li a:hover {
@@ -566,32 +600,13 @@ nav .navbar-nav .nav-item.dropdown .drop-down ul li a:hover {
   font-family: "Nunito", sans-serif;
 }
 
-@media (min-width: 768px) {
-  .upper-nav .contact {
-    text-align: center;
-  }
-  .upper-nav .account {
-    text-align: center;
-  }
+.copyrights {
+  padding: 30px 0;
+  background-color: #2d3436;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
 }
-@media (min-width: 992px) {
-  .upper-nav .contact {
-    text-align: left;
-  }
-  .upper-nav .account {
-    text-align: right;
-  }
-}
-@media (min-width: 768px) {
-  .home-search {
-    display: none;
-  }
-}
-@media (min-width: 992px) {
-  .home-search {
-    display: block;
-  }
-}
+
 .contact-us {
   margin: 80px 0;
   font-family: "Nunito", sans-serif;
@@ -715,13 +730,12 @@ nav .navbar-nav .nav-item.dropdown .drop-down ul li a:hover {
   color: #5677fc;
 }
 .shop-content .content-wrap .side-bar {
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 25px 16px rgba(0, 0, 0, 0.1);
   padding: 20px 0;
   margin-bottom: 30px;
   border-radius: 5px;
 }
 .shop-content .content-wrap .side-bar .filter .filter-item {
-  margin-bottom: 20px;
   padding: 0 25px;
 }
 .shop-content .content-wrap .side-bar .filter .filter-item ul {
@@ -732,7 +746,7 @@ nav .navbar-nav .nav-item.dropdown .drop-down ul li a:hover {
 }
 .shop-content .content-wrap .side-bar .filter .filter-item ul li {
   margin-bottom: 15px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   cursor: pointer;
   transition: 0.5s;
   font-weight: 400;
@@ -1219,6 +1233,33 @@ h1.wish-list-title:before {
 }
 .profile h1 {
   margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .upper-nav .contact {
+    text-align: center;
+  }
+  .upper-nav .account {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .upper-nav .contact {
+    text-align: left;
+  }
+  .upper-nav .account {
+    text-align: right;
+  }
+}
+@media (min-width: 768px) {
+  .home-search {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .home-search {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

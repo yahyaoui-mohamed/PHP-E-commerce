@@ -312,7 +312,7 @@ else{
       $query->execute();
       $products = $query->rowCount();
       
-      $query = $connect->prepare("SELECT * FROM orders");
+      $query = $connect->prepare("SELECT * FROM cart");
       $query->execute();
       $orders = $query->rowCount();
       

@@ -25,12 +25,12 @@ $(function () {
 		if ($(this).scrollTop() > 500) {
 			$(".scroll-top").fadeIn();
 			$("nav").addClass("fixed");
-			$("nav").addClass("animate__fadeInDown");
+			$("nav").addClass("animate__bounceInDown");
 		}
 		else {
 			$(".scroll-top").fadeOut();
 			$("nav").removeClass("fixed");
-			$("nav").removeClass("animate__fadeInDown");
+			$("nav").removeClass("animate__bounceInDown");
 			// $("nav").addClass("animate__fadeOutUp");
 		}
 	});
@@ -162,7 +162,7 @@ $(function () {
 		}
 	});
 
-	$(".fi-rr-heart").on("click", function () {
+	$(".icon .fi-rr-heart").on("click", function () {
 		if ($(this).hasClass("active")) {
 			$(this).next().html("Add to wishlist");
 		}
@@ -173,7 +173,7 @@ $(function () {
 	});
 
 
-	$(".fi-rr-shopping-cart").on("click", function () {
+	$(".icon .fi-rr-shopping-cart").on("click", function () {
 		if ($(this).hasClass("active")) {
 			$(this).next().html("Add to cart");
 		}
